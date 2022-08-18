@@ -21,8 +21,6 @@ public class User {
         this.rightNum = rightNum;
     }
 
-    public User() {
-    }
 
     // get/set系列方法
     public String getAccount() {

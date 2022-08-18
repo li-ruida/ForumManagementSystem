@@ -27,7 +27,8 @@ CREATE TABLE `comment` (
   `commenttext` varchar(100) NOT NULL,
   `commenttime` datetime NOT NULL,
   `UserIds` varchar(16) NOT NULL,
-  PRIMARY KEY (`idPosts`,`UserIds`),
+  `commentId` varchar(16) NOT NULL,
+  PRIMARY KEY (`commentId`),
   KEY `UserIds2_idx` (`UserIds`),
   CONSTRAINT `idPosts2` FOREIGN KEY (`idPosts`) REFERENCES `posts` (`idPosts`),
   CONSTRAINT `UserIds2` FOREIGN KEY (`UserIds`) REFERENCES `users` (`UserIds`)
@@ -40,7 +41,7 @@ CREATE TABLE `comment` (
 
 LOCK TABLES `comment` WRITE;
 /*!40000 ALTER TABLE `comment` DISABLE KEYS */;
-INSERT INTO `comment` VALUES ('0011','888','2022-03-26 08:30:30','003'),('0011','666','2022-03-26 08:30:30','004'),('0021','好','2022-03-26 08:30:30','001'),('0021','thanks','2022-03-26 08:30:30','002'),('0021','very good','2022-03-26 08:30:30','005');
+INSERT INTO `comment` VALUES ('0011','888','2022-03-26 08:30:30','003','00001'),('0011','666','2022-03-26 08:30:30','004','00002'),('0021','好','2022-03-26 08:30:30','001','00003'),('0021','thanks','2022-03-26 08:30:30','002','00004'),('0021','very good','2022-03-26 08:30:30','005','00005');
 /*!40000 ALTER TABLE `comment` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

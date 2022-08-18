@@ -9,19 +9,28 @@ import java.util.Date;
 public class Comment {
     private String idPost;// 帖子id
     private String userId;// 用户id
-    private String commentTest;// 评论内容
+    private String commentText;// 评论内容
     private Date commentTime;// 评论时间
 
-    // 构造方法
-    public Comment(String idPost, String userId, String commentTest, Date commentTime) {
+    public Comment(String idPost, String userId, String commentText, Date commentTime, String commentID) {
         this.idPost = idPost;
         this.userId = userId;
-        this.commentTest = commentTest;
+        this.commentText = commentText;
         this.commentTime = commentTime;
+        this.commentID = commentID;
     }
 
-    public Comment() {
+    public String getCommentID() {
+        return commentID;
     }
+
+    public void setCommentID(String commentID) {
+        this.commentID = commentID;
+    }
+
+    private String commentID;//评论id
+
+    // 构造方法
 
     // get/set 系列方法
     public String getIdPost() {
@@ -40,12 +49,12 @@ public class Comment {
         this.userId = userId;
     }
 
-    public String getCommentTest() {
-        return commentTest;
+    public String getCommentText() {
+        return commentText;
     }
 
-    public void setCommentTest(String commentTest) {
-        this.commentTest = commentTest;
+    public void setCommentText(String commentText) {
+        this.commentText = commentText;
     }
 
     public Date getCommentTime() {

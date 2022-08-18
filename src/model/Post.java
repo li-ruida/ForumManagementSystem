@@ -14,9 +14,10 @@ public class Post {
     private int sectionId;// 所属板块id 默认0
     private int nsTop;// 是否置顶 置顶为1，未置顶为0
     private int nsVisual;// 是否可见 不可见为1，可见为0
+    private String userId;// 用户id
 
     // 构造方法
-    public Post(String idPost, String handline, String content, Date time, int sectionId, int nsTop, int nsVisual) {
+    public Post(String idPost, String handline, String content, Date time, int sectionId, int nsTop, int nsVisual,String userId) {
         this.idPost = idPost;
         this.handline = handline;
         this.content = content;
@@ -24,9 +25,7 @@ public class Post {
         this.sectionId = sectionId;
         this.nsTop = nsTop;
         this.nsVisual = nsVisual;
-    }
-
-    public Post() {
+        this.userId = userId;
     }
 
     // get/set系列方法
@@ -84,5 +83,13 @@ public class Post {
 
     public void setNsVisual(int nsVisual) {
         this.nsVisual = nsVisual;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 }

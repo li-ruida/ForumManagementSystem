@@ -17,9 +17,6 @@ public class Section {
         this.userId = userId;
     }
 
-    public Section() {
-    }
-
     // get/set系列方法
     public int getSectionId() {
         return sectionId;
