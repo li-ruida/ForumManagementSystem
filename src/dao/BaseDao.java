@@ -15,7 +15,6 @@ import java.util.List;
  * @date 2022-08-17 下午7:07
  */
 public abstract class BaseDao<T> {
-
     public static void update(String sql, Object... args){
         Connection conn = null;
         PreparedStatement ps = null;
