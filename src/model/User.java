@@ -21,6 +21,16 @@ public class User {
         this.rightNum = rightNum;
     }
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "account='" + account + '\'' +
+                ", password='" + password + '\'' +
+                ", name='" + name + '\'' +
+                ", userId='" + userId + '\'' +
+                ", rightNum=" + rightNum +
+                '}';
+    }
 
     // get/set系列方法
     public String getAccount() {

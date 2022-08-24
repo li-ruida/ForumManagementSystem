@@ -20,7 +20,6 @@ public class Sensitivewords {
             if(myregexp(str,i.getSstiveword()))
                 return true;
         }
-
         return false;
     }
     public static boolean myregexp(String str, String sstiveword){

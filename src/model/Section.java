@@ -41,4 +41,13 @@ public class Section {
     public void setUserId(String userId) {
         this.userId = userId;
     }
+
+    @Override
+    public String toString() {
+        return "Section{" +
+                "sectionId=" + sectionId +
+                ", secName='" + secName + '\'' +
+                ", userId='" + userId + '\'' +
+                '}';
+    }
 }

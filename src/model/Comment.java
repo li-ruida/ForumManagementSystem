@@ -64,4 +64,15 @@ public class Comment {
     public void setCommentTime(Date commentTime) {
         this.commentTime = commentTime;
     }
+
+    @Override
+    public String toString() {
+        return "Comment{" +
+                "idPost='" + idPost + '\'' +
+                ", userId='" + userId + '\'' +
+                ", commentText='" + commentText + '\'' +
+                ", commentTime=" + commentTime +
+                ", commentID='" + commentID + '\'' +
+                '}';
+    }
 }

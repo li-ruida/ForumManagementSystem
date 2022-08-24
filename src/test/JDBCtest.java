@@ -1,5 +1,6 @@
 package test;
 
+import dao.UserDaoImpl;
 import model.Sensitiveword;
 import org.junit.Test;
 import util.JDBCCRUD;
@@ -20,5 +21,6 @@ public class JDBCtest {
         for (Sensitiveword i:Sensitivewords) {
             System.out.println(i);
         }
+        
     }
 }

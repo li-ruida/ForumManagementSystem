@@ -92,4 +92,18 @@ public class Post {
     public void setUserId(String userId) {
         this.userId = userId;
     }
+
+    @Override
+    public String toString() {
+        return "Post{" +
+                "idPost='" + idPost + '\'' +
+                ", handline='" + handline + '\'' +
+                ", content='" + content + '\'' +
+                ", time=" + time +
+                ", sectionId=" + sectionId +
+                ", nsTop=" + nsTop +
+                ", nsVisual=" + nsVisual +
+                ", userId='" + userId + '\'' +
+                '}';
+    }
 }

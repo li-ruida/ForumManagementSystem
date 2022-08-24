@@ -8,6 +8,14 @@ public class UserandPosts {
     private String userId;
     private String idPost;
 
+    @Override
+    public String toString() {
+        return "UserandPosts{" +
+                "userId='" + userId + '\'' +
+                ", idPost='" + idPost + '\'' +
+                '}';
+    }
+
     public UserandPosts() {
     }
 
