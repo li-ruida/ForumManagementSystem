@@ -22,17 +22,14 @@
 DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-
-
-
 CREATE TABLE `users` (
-  `Accounts` varchar(16) NOT NULL DEFAULT '账号',
-  `Passwords` varchar(16) NOT NULL DEFAULT '密码',
-  `Names` varchar(10) NOT NULL DEFAULT '用户名',
-  `UserIds` varchar(16) NOT NULL DEFAULT '用户ID',
-  `Rightnum` int NOT NULL,
-  PRIMARY KEY (`Accounts`,`Names`,`UserIds`),
-  KEY `UserIds_idx` (`UserIds`)
+                         `Accounts` varchar(16) NOT NULL,
+                         `Passwords` varchar(16) NOT NULL,
+                         `Names` varchar(10) NOT NULL,
+                         `UserIds` varchar(16) NOT NULL,
+                         `Rightnum` int NOT NULL,
+                         PRIMARY KEY (`UserIds`),
+                         KEY `UserIds_idx` (`UserIds`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -55,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-08-16 14:43:27
+-- Dump completed on 2022-08-24 10:02:31
