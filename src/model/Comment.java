@@ -7,72 +7,68 @@ import java.util.Date;
  */
 // 评论类
 public class Comment {
-    private String idPost;// 帖子id
-    private String userId;// 用户id
-    private String commentText;// 评论内容
-    private Date commentTime;// 评论时间
+    private String idPosts;// 帖子id
+    private String UserIds;// 用户id
+    private String commenttext;// 评论内容
 
-    public Comment(String idPost, String userId, String commentText, Date commentTime, String commentID) {
-        this.idPost = idPost;
-        this.userId = userId;
-        this.commentText = commentText;
-        this.commentTime = commentTime;
-        this.commentID = commentID;
+
+
+
+    public Comment() {
     }
 
-    public String getCommentID() {
-        return commentID;
+    public Comment(String idPost, String userId, String commentText, String commentID) {
+        this.idPosts = idPost;
+        this.UserIds = userId;
+        this.commenttext = commentText;
+        this.commentId = commentID;
     }
 
-    public void setCommentID(String commentID) {
-        this.commentID = commentID;
+    public String getCommentId() {
+        return commentId;
     }
 
-    private String commentID;//评论id
+    public void setCommentId(String commentId) {
+        this.commentId = commentId;
+    }
+
+    private String commentId;//评论id
 
     // 构造方法
 
     // get/set 系列方法
-    public String getIdPost() {
-        return idPost;
+    public String getIdPosts() {
+        return idPosts;
     }
 
-    public void setIdPost(String idPost) {
-        this.idPost = idPost;
+    public void setIdPosts(String idPosts) {
+        this.idPosts = idPosts;
     }
 
-    public String getUserId() {
-        return userId;
+    public String getUserIds() {
+        return UserIds;
     }
 
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public void setUserIds(String userIds) {
+        this.UserIds = userIds;
     }
 
-    public String getCommentText() {
-        return commentText;
+    public String getCommenttext() {
+        return commenttext;
     }
 
-    public void setCommentText(String commentText) {
-        this.commentText = commentText;
+    public void setCommenttext(String commenttext) {
+        this.commenttext = commenttext;
     }
 
-    public Date getCommentTime() {
-        return commentTime;
-    }
-
-    public void setCommentTime(Date commentTime) {
-        this.commentTime = commentTime;
-    }
 
     @Override
     public String toString() {
         return "Comment{" +
-                "idPost='" + idPost + '\'' +
-                ", userId='" + userId + '\'' +
-                ", commentText='" + commentText + '\'' +
-                ", commentTime=" + commentTime +
-                ", commentID='" + commentID + '\'' +
+                "idPost='" + idPosts + '\'' +
+                ", userId='" + UserIds + '\'' +
+                ", commentText='" + commenttext + '\'' +
+                ", commentID='" + commentId + '\'' +
                 '}';
     }
 }

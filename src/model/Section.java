@@ -6,48 +6,50 @@ package model;
  */
 // 板块类
 public class Section {
-    private int sectionId; // 板块id 0为默认板块
-    private String secName; // 板块名字
-    private String userId;// 版主id
-
+    private int SectionIds; // 板块id 0为默认板块
+    private String SecName; // 板块名字
+    private String UserIds;// 版主id
     // 构造方法
     public Section(int sectionId, String secName, String userId) {
-        this.sectionId = sectionId;
-        this.secName = secName;
-        this.userId = userId;
+        this.SectionIds = sectionId;
+        this.SecName = secName;
+        this.UserIds = userId;
+    }
+
+    public Section() {
     }
 
     // get/set系列方法
-    public int getSectionId() {
-        return sectionId;
+    public int getSectionIds() {
+        return SectionIds;
     }
 
-    public void setSectionId(int sectionId) {
-        this.sectionId = sectionId;
+    public void setSectionIds(int sectionIds) {
+        this.SectionIds = sectionIds;
     }
 
     public String getSecName() {
-        return secName;
+        return SecName;
     }
 
     public void setSecName(String secName) {
-        this.secName = secName;
+        this.SecName = secName;
     }
 
-    public String getUserId() {
-        return userId;
+    public String getUserIds() {
+        return UserIds;
     }
 
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public void setUserIds(String userIds) {
+        this.UserIds = userIds;
     }
 
     @Override
     public String toString() {
         return "Section{" +
-                "sectionId=" + sectionId +
-                ", secName='" + secName + '\'' +
-                ", userId='" + userId + '\'' +
+                "sectionId=" + SectionIds +
+                ", secName='" + SecName + '\'' +
+                ", userId='" + UserIds + '\'' +
                 '}';
     }
 }

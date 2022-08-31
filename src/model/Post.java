@@ -7,42 +7,45 @@ import java.util.Date;
  */
 // 帖子类
 public class Post {
-    private String idPost;// 帖子id
+    private String idPosts;// 帖子id
     private String handline;// 标题
     private String content;// 内容
-    private Date time;// 发帖时间
-    private int sectionId;// 所属板块id 默认0
-    private int nsTop;// 是否置顶 置顶为1，未置顶为0
-    private int nsVisual;// 是否可见 不可见为1，可见为0
-    private String userId;// 用户id
+    private int SectionIds;// 所属板块id 默认0
+    private int nstop;// 是否置顶 置顶为1，未置顶为0
+    private int nsvisual;// 是否可见 不可见为1，可见为0
+    private String UserIds;// 用户id
+
+
+    public Post() {
+    }
 
     // 构造方法
-    public Post(String idPost, String handline, String content, Date time, int sectionId, int nsTop, int nsVisual,String userId) {
-        this.idPost = idPost;
+    public Post(String idPost, String handline, String content, int sectionId, int nsTop, int nsVisual,String userId) {
+        this.idPosts = idPost;
         this.handline = handline;
         this.content = content;
-        this.time = time;
-        this.sectionId = sectionId;
-        this.nsTop = nsTop;
-        this.nsVisual = nsVisual;
-        this.userId = userId;
+
+        this.SectionIds = sectionId;
+        this.nstop = nsTop;
+        this.nsvisual = nsVisual;
+        this.UserIds = userId;
     }
 
     // get/set系列方法
-    public int getSectionId() {
-        return sectionId;
+    public int getSectionIds() {
+        return SectionIds;
     }
 
-    public void setSectionId(int sectionId) {
-        this.sectionId = sectionId;
+    public void setSectionIds(int sectionIds) {
+        this.SectionIds = sectionIds;
     }
 
-    public String getIdPost() {
-        return idPost;
+    public String getIdPosts() {
+        return idPosts;
     }
 
-    public void setIdPost(String idPost) {
-        this.idPost = idPost;
+    public void setIdPosts(String idPosts) {
+        this.idPosts = idPosts;
     }
 
     public String getHandline() {
@@ -61,49 +64,42 @@ public class Post {
         this.content = content;
     }
 
-    public Date getTime() {
-        return time;
+
+
+    public int getNstop() {
+        return nstop;
     }
 
-    public void setTime(Date time) {
-        this.time = time;
+    public void setNstop(int nstop) {
+        this.nstop = nstop;
     }
 
-    public int getNsTop() {
-        return nsTop;
+    public int getNsvisual() {
+        return nsvisual;
     }
 
-    public void setNsTop(int nsTop) {
-        this.nsTop = nsTop;
+    public void setNsvisual(int nsvisual) {
+        this.nsvisual = nsvisual;
     }
 
-    public int getNsVisual() {
-        return nsVisual;
+    public String getUserIds() {
+        return UserIds;
     }
 
-    public void setNsVisual(int nsVisual) {
-        this.nsVisual = nsVisual;
-    }
-
-    public String getUserId() {
-        return userId;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public void setUserIds(String userIds) {
+        this.UserIds = userIds;
     }
 
     @Override
     public String toString() {
         return "Post{" +
-                "idPost='" + idPost + '\'' +
+                "idPost='" + idPosts + '\'' +
                 ", handline='" + handline + '\'' +
                 ", content='" + content + '\'' +
-                ", time=" + time +
-                ", sectionId=" + sectionId +
-                ", nsTop=" + nsTop +
-                ", nsVisual=" + nsVisual +
-                ", userId='" + userId + '\'' +
+                ", sectionId=" + SectionIds +
+                ", nsTop=" + nstop +
+                ", nsVisual=" + nsvisual +
+                ", userId='" + UserIds + '\'' +
                 '}';
     }
 }

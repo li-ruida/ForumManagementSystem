@@ -1,7 +1,7 @@
 package dao;
 
 import model.User;
-import util.JDBCCRUD;
+import util.JDBCUtils;
 
 import java.sql.Connection;
 import java.util.List;
@@ -20,8 +20,8 @@ public class UserDaoImpl extends BaseDao<User> implements UserDao{
 
     @Override
     public void saveUser(Connection conn, User user) {
-        String sql="insert into `users` VALUES (?,?,?,?,?)";
-        BaseDao.update(conn,sql,user.getAccount(),user.getPassword(),user.getName(),user.getUserId(),user.getRightNum());
+        String sql="insert into `users` VALUES (?,?,?,?)";
+        BaseDao.update(conn,sql,user.getPasswords(),user.getNames(),user.getUserIds(),user.getRightnum());
     }
 
     @Override
@@ -32,13 +32,19 @@ public class UserDaoImpl extends BaseDao<User> implements UserDao{
 
     @Override
     public User getUserById(Connection conn, String userId) {
-        String sql="select from `users` where `UserIds` = ?";
+        String sql="select * from `users` where `UserIds` = ?";
         return BaseDao.getInstance(User.class,sql,userId);
     }
 
     @Override
     public void updateUser(Connection conn, User user) {
-        String sql="update `users` set `Accounts`=? `Passwords`=?  `Names`=? `Rightnum`=? where `UserIds` = ?";
-        BaseDao.update(conn,sql,user.getAccount(),user.getPassword(),user.getName(),user.getRightNum(),user.getUserId());
+        String sql="update `users` set  `Passwords`=? ,`Names`=?,`Rightnum`=? where `UserIds` = ?";
+        BaseDao.update(conn,sql,user.getPasswords(),user.getNames(),user.getRightnum(),user.getUserIds());
+    }
+    public static Long countnum(){
+        Connection conn= JDBCUtils.getConnection();
+        String sql="select count(*) from ourforum.users;";
+        Long value = BaseDao.<Long>getValue(conn, sql);
+        return value;
     }
 }

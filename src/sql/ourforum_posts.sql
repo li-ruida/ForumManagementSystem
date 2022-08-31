@@ -26,23 +26,26 @@ CREATE TABLE `posts` (
   `idPosts` varchar(20) NOT NULL,
   `handline` varchar(45) NOT NULL,
   `content` varchar(200) DEFAULT NULL,
-  `time` datetime NOT NULL,
   `nstop` int NOT NULL,
   `nsvisual` int NOT NULL,
-  `SectionIds` int NOT NULL DEFAULT '0',
-  PRIMARY KEY (`idPosts`),
-  KEY `SectionIds_idx` (`SectionIds`),
-  CONSTRAINT `SectionIds` FOREIGN KEY (`SectionIds`) REFERENCES `section` (`SectionIds`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `SectionIds` int NOT NULL DEFAULT '1',
+  `UserIds` varchar(16) NOT NULL,
+  PRIMARY KEY (`idPosts`)
+  ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
+drop table `posts`;
 --
 -- Dumping data for table `posts`
 --
-
+drop table `posts`;
 LOCK TABLES `posts` WRITE;
 /*!40000 ALTER TABLE `posts` DISABLE KEYS */;
-INSERT INTO `posts` VALUES ('0011','怎么学习英语','多读多背','2022-02-25 12:30:25',1,0,1),('0012','怎么学习数学','多想多做','2022-03-26 08:30:30',0,0,1),('0021','游戏分享','嘎嘎乱杀','2022-03-26 08:30:30',0,0,2),('0031','购物分享','购物真爽','2022-03-26 08:30:30',0,0,2);
+INSERT INTO `posts` VALUES ('000001','怎么学习英语','多读多背',1,0,2,'100001'),
+                           ('000002','怎么学习数学','多想多做',0,0,2,'100005'),
+                           ('000003','游戏分享','嘎嘎乱杀',0,0,1,'100003'),
+                           ('000004','购物分享','购物真爽',0,0,3,'100003'),
+                           ('000000','购物分享','购物真爽',0,1,1,'000000');
+
 /*!40000 ALTER TABLE `posts` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

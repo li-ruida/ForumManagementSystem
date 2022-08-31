@@ -23,7 +23,7 @@ DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `users` (
-                         `Accounts` varchar(16) NOT NULL,
+
                          `Passwords` varchar(16) NOT NULL,
                          `Names` varchar(10) NOT NULL,
                          `UserIds` varchar(16) NOT NULL,
@@ -36,10 +36,13 @@ CREATE TABLE `users` (
 --
 -- Dumping data for table `users`
 --
-
+drop table users;
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES ('000000','000000','manage','000',2),('100001','111111','Bob','001',1),('100002','222222','Anna','002',1),('100003','333333','Peter','003',0),('100004','444444','Tom','004',0),('100005','555555','LiMing','005',0),('100006','666666','Mark','006',-1);
+INSERT INTO `users` VALUES ('000000','admin','000000',-2),('111111','Bob','100001',1),
+                           ('222222','Anna','100002',0),('333333','Peter','100003',3),
+                           ('444444','Tom','100004',0),('555555','LiMing','100005',2),
+                           ('666666','Mark','100006',-1);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

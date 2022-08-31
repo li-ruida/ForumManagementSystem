@@ -38,7 +38,9 @@ CREATE TABLE `userandposts` (
 
 LOCK TABLES `userandposts` WRITE;
 /*!40000 ALTER TABLE `userandposts` DISABLE KEYS */;
-INSERT INTO `userandposts` VALUES ('001','0011'),('001','0012'),('002','0021'),('003','0031');
+INSERT INTO `userandposts` VALUES ('100001','000001'),('100005','000002'),('100003','000003'),('100003','000004');
+
+
 /*!40000 ALTER TABLE `userandposts` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

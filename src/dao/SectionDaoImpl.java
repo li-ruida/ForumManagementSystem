@@ -1,7 +1,7 @@
 package dao;
 
-import model.Comment;
 import model.Section;
+import util.JDBCUtils;
 
 import java.sql.Connection;
 import java.util.List;
@@ -21,7 +21,7 @@ public class SectionDaoImpl extends BaseDao<Section>implements SectionDao{
     @Override
     public void saveSection(Connection conn, Section section) {
         String sql="insert into `section` VALUES (?,?,?)";
-        BaseDao.update(conn,sql,section.getSectionId(),section.getUserId(),section.getSecName());
+        BaseDao.update(conn,sql,section.getSectionIds(),section.getUserIds(),section.getSecName());
     }
 
     @Override
@@ -32,14 +32,21 @@ public class SectionDaoImpl extends BaseDao<Section>implements SectionDao{
 
     @Override
     public Section getSectionById(Connection conn, int sectionId) {
-        String sql="select from `section` where  `SectionIds` = ?";
+        String sql="select * from `section` where  `SectionIds` = ?";
         return BaseDao.getInstance(Section.class,sql,sectionId);
     }
 
     @Override
     public void updateSection(Connection conn, Section section) {
-        String sql="update `section` set `UserIds`=? `SecName`=? where `SectionIds` =?";
-        BaseDao.update(conn,sql,section.getUserId(),section.getSecName());
+        String sql="update `section` set `UserIds`=?, `SecName`=? where `SectionIds` =?";
+        BaseDao.update(conn,sql,section.getUserIds(),section.getSecName(),section.getSectionIds());
 
+    }
+
+    public static Long countnum(){
+        Connection conn= JDBCUtils.getConnection();
+        String sql="select count(*) from ourforum.section;";
+        Long value = BaseDao.<Long>getValue(conn, sql);
+        return value;
     }
 }

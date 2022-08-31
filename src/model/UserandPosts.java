@@ -5,14 +5,14 @@ package model;
  * @date 2022-08-19 下午10:19
  */
 public class UserandPosts {
-    private String userId;
-    private String idPost;
+    private String UserIds;
+    private String IdPosts;
 
     @Override
     public String toString() {
         return "UserandPosts{" +
-                "userId='" + userId + '\'' +
-                ", idPost='" + idPost + '\'' +
+                "userId='" + UserIds + '\'' +
+                ", idPost='" + IdPosts + '\'' +
                 '}';
     }
 
@@ -20,26 +20,26 @@ public class UserandPosts {
     }
 
     public UserandPosts(String userId, String idPost) {
-        this.userId = userId;
-        this.idPost = idPost;
+        this.UserIds = userId;
+        this.IdPosts = idPost;
     }
     public UserandPosts(User user ,Post post) {
-        this.userId=user.getUserId();
-        this.idPost=post.getIdPost();
+        this.UserIds =user.getUserIds();
+        this.IdPosts =post.getIdPosts();
     }
-    public String getUserId() {
-        return userId;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public String getUserIds() {
+        return UserIds;
     }
 
-    public String getIdPost() {
-        return idPost;
+    public void setUserIds(String userIds) {
+        this.UserIds = userIds;
     }
 
-    public void setIdPost(String idPost) {
-        this.idPost = idPost;
+    public String getIdPosts() {
+        return IdPosts;
+    }
+
+    public void setIdPosts(String idPosts) {
+        this.IdPosts = idPosts;
     }
 }

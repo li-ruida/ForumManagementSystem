@@ -1,9 +1,10 @@
 package dao;
 
-import model.Comment;
 import model.Post;
+import util.JDBCUtils;
 
 import java.sql.Connection;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -13,14 +14,15 @@ import java.util.List;
 public class PostDaoImpl extends BaseDao<Post> implements PostDao{
     @Override
     public List<Post> getPost() {
-        String sql="select * from `posts`";
+        String sql="select * from `posts` order by `idPosts` desc;";
         List beanList = BaseDao.getForList(Post.class, sql);
         return beanList;
     }
     @Override
     public void savePost(Connection conn, Post post) {
-        String sql="insert into `posts` VALUES (?,?,?,?,?,?.?)";
-        BaseDao.update(conn,sql,post.getIdPost(),post.getHandline(),post.getContent(),post.getTime(),post.getNsTop(),post.getNsVisual(),post.getIdPost());
+        String sql="insert into `posts` VALUES (?,?,?,?,?,?,?)";
+
+        BaseDao.update(conn,sql,post.getIdPosts(),post.getHandline(),post.getContent(),post.getNstop(),post.getNsvisual(),post.getIdPosts(),post.getUserIds());
     }
 
     @Override
@@ -31,14 +33,21 @@ public class PostDaoImpl extends BaseDao<Post> implements PostDao{
 
     @Override
     public Post getPostById(Connection conn, String postId) {
-        String sql="select from `posts` where `idPosts` = ?";
+        String sql="select * from `posts` where `idPosts` = ?";
         return BaseDao.getInstance(Post.class,sql,postId);
     }
 
     @Override
     public void updatePost(Connection conn, Post post) {
-        String sql="update `post` set `handline`=? `content`=? `time`=? `nstop` = ? `nsvisual`=? `SectionIds`=? where `idPosts` =?";
-        BaseDao.update(conn,sql,post.getHandline(),post.getContent(),post.getTime(),post.getNsTop(),post.getNsVisual(),post.getSectionId(),post.getIdPost());
+        String sql="update `post` set `handline`=? `content`=?  `nstop` = ? `nsvisual`=? `SectionIds`=? `UserIds`=? where `idPosts` =?";
+        BaseDao.update(conn,sql,post.getHandline(),post.getContent(),post.getNstop(),post.getNsvisual(),post.getSectionIds(),post.getUserIds(),post.getIdPosts());
+    }
+
+    public static Long countnum(){
+        Connection conn= JDBCUtils.getConnection();
+        String sql="select count(*) from ourforum.posts;";
+        Long value = BaseDao.<Long>getValue(conn, sql);
+        return value;
     }
 }
 /*

@@ -1,9 +1,12 @@
 package test;
 
-import dao.UserDaoImpl;
+import dao.*;
+import model.Comment;
+import model.Post;
 import model.Sensitiveword;
 import org.junit.Test;
 import util.JDBCCRUD;
+import util.JDBCUtils;
 
 import java.util.List;
 
@@ -21,6 +24,27 @@ public class JDBCtest {
         for (Sensitiveword i:Sensitivewords) {
             System.out.println(i);
         }
-        
+
+    }
+    @Test
+    public void test2(){
+
+        PostDao postDao=new PostDaoImpl();
+        List<Post> post = postDao.getPost();
+        for (Post p:post){
+            System.out.println(p);
+        }
+
+        Post postById = postDao.getPostById(JDBCUtils.getConnection(), "000001");
+        System.out.println(postById);
+
+    }
+    @Test
+    public void test3(){
+
+        CommentDao commentDao=new CommentDaoImpl();
+        List<Comment> comment = commentDao.getComment();
+        System.out.println(comment);
+
     }
 }

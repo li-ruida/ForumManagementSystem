@@ -24,11 +24,9 @@ DROP TABLE IF EXISTS `section`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `section` (
   `SectionIds` int NOT NULL,
-  `UserIds` varchar(16) NOT NULL,
+  `UserIds` varchar(16) NOT NULL default '-2',
   `SecName` varchar(20) NOT NULL,
-  PRIMARY KEY (`SectionIds`,`UserIds`),
-  KEY `UserIds_idx` (`UserIds`),
-  CONSTRAINT `UserIds3` FOREIGN KEY (`UserIds`) REFERENCES `users` (`UserIds`)
+  PRIMARY KEY (`SectionIds`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -38,7 +36,7 @@ CREATE TABLE `section` (
 
 LOCK TABLES `section` WRITE;
 /*!40000 ALTER TABLE `section` DISABLE KEYS */;
-INSERT INTO `section` VALUES (0,'000','默认板块'),(1,'001','怎么学习'),(2,'002','日常分享');
+INSERT INTO `section` VALUES (1,'000000','默认板块'),(2,'100005','学习交流'),(3,'100003','日常分享');
 /*!40000 ALTER TABLE `section` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
