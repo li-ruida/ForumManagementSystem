@@ -204,7 +204,7 @@ public class Server {
                     break;
                 case 3:
                     CommentDao commentDao=new CommentDaoImpl();
-                    String sql="select * from `comment` where `idPosts` = ?";
+                    String sql="select * from `comment` where `idPosts` = ?;";
                     List<Comment> commentList = JDBCCRUD.getForList(Comment.class, sql, post.getIdPosts());
                     for (Comment comment:commentList){
                         System.out.println(comment.getUserIds()+": "+comment.getCommenttext()+"---CommentID:"+comment.getCommentId());

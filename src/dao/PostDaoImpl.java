@@ -39,7 +39,7 @@ public class PostDaoImpl extends BaseDao<Post> implements PostDao{
 
     @Override
     public void updatePost(Connection conn, Post post) {
-        String sql="update `post` set `handline`=? `content`=?  `nstop` = ? `nsvisual`=? `SectionIds`=? `UserIds`=? where `idPosts` =?";
+        String sql="update `posts` set `handline`=? ,`content`=? , `nstop` = ? ,`nsvisual`=? ,`SectionIds`=? ,`UserIds`=? where `idPosts` =?";
         BaseDao.update(conn,sql,post.getHandline(),post.getContent(),post.getNstop(),post.getNsvisual(),post.getSectionIds(),post.getUserIds(),post.getIdPosts());
     }
 

@@ -110,7 +110,6 @@ public abstract class BaseDao<T> {
             for (int i = 0; i < args.length; i++) {
                 ps.setObject(i + 1, args[i]);
             }
-
             rs = ps.executeQuery();
             // 获取结果集的元数据 :ResultSetMetaData
             ResultSetMetaData rsmd = rs.getMetaData();

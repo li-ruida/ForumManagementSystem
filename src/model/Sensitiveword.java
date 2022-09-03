@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Objects;
+
 /**
  * @author lrd
  * @date 2022-08-17 下午6:53
@@ -27,5 +29,18 @@ public class Sensitiveword {
         return "Sensitiveword{" +
                 "Sstiveword='" + Sstiveword + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Sensitiveword that = (Sensitiveword) o;
+        return Objects.equals(Sstiveword, that.Sstiveword);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(Sstiveword);
     }
 }

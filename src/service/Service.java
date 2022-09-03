@@ -54,7 +54,7 @@ public class Service {
 
     // 删帖
     static boolean deletePost(Post post,User user){// 要删的帖子，谁要删除这个帖子
-        if((user.getRightnum() == -2) || (user.getUserIds() == post.getUserIds()) || (user.getRightnum() == post.getSectionIds())){
+        if((user.getRightnum() == -2) || (user.getUserIds().equals(post.getUserIds()) ) || (user.getRightnum()==post.getSectionIds())){
             // 管理员、自己、此版块版主  有权限删除帖子
 
             // 帖子从post中删除
@@ -129,7 +129,7 @@ public class Service {
         Post post = postDao.getPostById(conn,postId);
         int sectionId = post.getSectionIds(); // 版主id = 版块id
 
-        if((comment.getUserIds() == user.getUserIds()) || (user.getUserIds() == userid) ||(user.getRightnum() == -2) || (user.getRightnum() == sectionId)){
+        if((comment.getUserIds() .equals( user.getUserIds())) || (user.getUserIds() .equals(userid )) ||(user.getRightnum() == -2) || (user.getRightnum() == sectionId)){
             // 从数据库中删除评论
             Connection conn2 = JDBCUtils.getConnection();
             CommentDao commentDao = new CommentDaoImpl();
